@@ -35,7 +35,7 @@ runs:
           release_date=$3
           image_id=$4
           image_name=$5
-          url="https://github.com/tiyicn/operating-system/releases/download/${version}/haos_${image_id}-${version}.img.xz"
+          url="https://github.com/${{ github.repository_owner }}/operating-system/releases/download/${version}/haos_${image_id}-${version}.img.xz"
           temp_image=$(mktemp --suffix=.img.xz)
           temp_out=$(mktemp)
 
