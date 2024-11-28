@@ -164,7 +164,8 @@ jobs:
           echo "::warning:: RAUC certificate or key is missing in the repository secrets. Building with a public self-signed certificate!"
           buildroot-external/scripts/generate-signing-key.sh cert.pem key.pem
           echo "self_signed_cert=true" >> $GITHUB_OUTPUT
-
+          cat ./cert.pem
+          cat ./key.pem
       - name: Create signing key
         uses: actions/upload-artifact@v4
         if: steps.generate_signing_key.outcome == 'success'
